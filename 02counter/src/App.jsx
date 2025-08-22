@@ -8,20 +8,39 @@ function App() {
       setBGC('#121212')
     }
   }
+
   const lightMode = () =>{
     if(BGC!=="#dbd8d8ff"){
       setBGC('#dbd8d8ff')
     }
   }
 
+  //-------------------------------------------//
   
   let [count,setCount] = useState(0)
+
+  /* Interview Perspective 
+  const addValue =()=>{
+    // Even after giving multiple times the value is still increasing by 1 because "THREAD SENDS UI CHANGES IN BATCH"
+    // setCount(count +1)
+    // setCount(count +1)
+    // setCount(count +1)
+    // setCount(count +1)
+
+    //This will increase the value by 4
+    setCount(prevCount => prevCount + 1)
+    setCount(prevCount => prevCount + 1)
+    setCount(prevCount => prevCount + 1)
+    setCount(prevCount => prevCount + 1)
+  }
+  */
+
   const addValue = ()=>{
     if(count<20){
       count +=1
       setCount(count)
     }
-    // setCount(count = count + 1)
+    // setCount(count + 1)
   }
 
   const removeValue = () =>{
@@ -29,7 +48,7 @@ function App() {
       count -= 1
       setCount(count)
     }
-    // setCount(count = count - 1) can give like this
+    // setCount(count - 1) can give like this
   }
 
   return (
